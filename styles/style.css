@@ -5,10 +5,26 @@ body{
     font-family: 'Poppins', sans-serif;
     background-color: #F3F1FF;
 }
+main{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    
+}
+.section-title{
+    color:#562EFF;
+    font-size:24px;
+}
+.container{
+    background-color: #ffffff;
+    width: 870px;
+    padding: 30px;
+}
 /* Top section */
 .players{
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    grid-row-gap: 30px;
 }
 .player{
     display: flex;
@@ -17,4 +33,91 @@ body{
 .player img{
     width: 56px;
     height: 56px;
+}
+.player-name{
+    padding-left: 16px;
+}
+hr{
+    margin-top: 20px;
+}
+hr:hover{
+    border: 1px solid blue;
+}
+/*---------------------------
+-------- Blog section----------
+----------------  */
+.blogs{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-row-gap: 26px;
+}
+.blog .thumbnail img{
+    width: 177px;
+    height: 117px;
+}
+.blog{
+    display: flex;
+}
+
+.blog-info{
+    margin-left: 16px;
+}
+.blog-title{
+    font-size: 20px;
+}
+.blog-author{
+    color: #7d62f3;
+}
+.blog-author a{
+    text-decoration: none;
+    color: #562EFF;
+    font-size: 16px;
+}
+
+/* Course Section */
+.couses{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 26px;
+}
+.course-banner img{
+    width: 224px;
+    height: 104px;
+}
+.course-info-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.clock-time{
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(214, 142, 142);
+    
+}
+
+/* ---------------------Media Queries------------------------- */
+
+/*------ Mobile Devices ----*/
+@media only screen and (max-width:688px) {
+    .container{
+        width: 100%;
+    }
+    .players, .blogs, .couses{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .player, .blog, .course{
+        flex-direction: column;
+    }
+
+}
+
+/* ---------Tablets------------ */
+@media only screen and (min-width:688px) and (max-width:992px) {
+    .container{
+        width: 100%;
+    }
+    .players, .couses, .blogs{
+        grid-template-columns: repeat(2,1fr);
+    }
 }
